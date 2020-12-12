@@ -1,0 +1,34 @@
+[Unit]
+Description=Minecraft Server 1.16.4 Forge
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/minecraft-forge
+PrivateUsers=true
+
+User=minecraft
+Group=minecraft
+
+ProtectSystem=full
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+Restart=on-failure
+RestartSec=60s
+
+ExecStart=/usr/bin/screen -DmS minecraft-forge /usr/bin/java -Xms1024M -Xmx1600M -jar /opt/minecraft-forge/forge.jar nogui
+
+ExecReload=/usr/bin/screen -p 0 -S minecraft-forge -X eval 'stuff "reload"\\015'
+
+ExecStop=/usr/bin/screen -p 0 -S minecraft-forge -X eval 'stuff "say SERVER SHUTTING DOWN. Saving map..."\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft-forge -X eval 'stuff "save-off"\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft-forge -X eval 'stuff "save-all"\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft-forge -X eval 'stuff "save-on"\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft-forge -X eval 'stuff "say SERVER SHUTTING DOWN. Stopping..."\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft-forge -X eval 'stuff "stop"\\015'
+ExecStop=/bin/sleep 10
+
+[Install]
+WantedBy=multi-user.target

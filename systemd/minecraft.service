@@ -18,7 +18,6 @@ ProtectControlGroups=true
 Restart=on-failure
 RestartSec=60s
 
-
 ExecStart=/usr/bin/screen -DmS minecraft /usr/bin/java -Xmx2G -jar /opt/minecraft/server.jar nogui
 
 ExecReload=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "reload"\\015'
