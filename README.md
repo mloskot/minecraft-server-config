@@ -4,7 +4,18 @@ Configuration files for a basic Minecraft Server on Linux.
 
 ## Hosting
 
-I use VPS with 2+ GB RAM from https://github.com/lvlup-pro folks.
+Use VPS with 1 CPU and 2 GB (PL) or 2 CPU and 4 GB (FR) from https://github.com/lvlup-pro folks.
+
+## Security
+
+Follow [Jak zabezpieczyć VPSa przed włamaniami botów na SSH](https://forum.lvlup.pro/t/jak-zabezpieczyc-vpsa-przed-wlamaniami-botow-na-ssh/96) (in Polish) to implement bare minimum of the server security:
+  - Install fail2ban
+  - Remove smbd
+  - Remove Apache and other unused services
+  - Allow SSH with key-based authentication only
+  - Change SSH port
+  - Configure Ubuntu automatic updates
+  - ...
 
 ## Installation
 
