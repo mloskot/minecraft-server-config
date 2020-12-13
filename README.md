@@ -2,6 +2,9 @@
 
 Configuration files for a basic Minecraft Server on Linux.
 
+The configuration below is by no means dedicated to deploy a high-performance server,
+but a small private server for a limited set of users (my kids and their friends).
+
 ## Hosting
 
 Use VPS with 1 CPU and 2 GB (PL) or 2 CPU and 4 GB (FR) from https://github.com/lvlup-pro folks.
@@ -110,38 +113,40 @@ malisisdoors-1.12.2-7.3.0.jar
 worldedit-forge-mc1.12.2-6.1.10-dist.jar
 ```
 
-#### Configure Users
+#### Configure
 
-- Edit `server.properties`
+The [server.properties](server.properties) contains reasonable defaults for the server to support `whitelist.json` and `ops.json`.
 
-  ```
-  enforce-whitelist=true
-  white-list=true
-  ```
+The essential users configuration is to enable the users whitelist in the `server.properties` in order to control who can access the server (in my case, it's my kids and their friends).
 
-- `ops.json`
+```
+enforce-whitelist=true
+white-list=true
+```
 
-  ```
-  [
-    {
-      "uuid": "facf3075-d7f9-49db-91e3-80469f0cf04d",
-      "name": "mloskot",
-      "level": 2,
-      "bypassesPlayerLimit": false
-    }
-  ]
-  ```
+Create `ops.json`:
 
-- `whitelist.json`
+```
+[
+  {
+    "uuid": "facf3075-d7f9-49db-91e3-80469f0cf04d",
+    "name": "mloskot",
+    "level": 2,
+    "bypassesPlayerLimit": false
+  }
+]
+```
 
-  ```
-  [
-    {
-      "uuid": "facf3075-d7f9-49db-91e3-80469f0cf04d",
-      "name": "mloskot",
-    }
-  ]
-  ```
+Create `whitelist.json`:
+
+```
+[
+  {
+    "uuid": "facf3075-d7f9-49db-91e3-80469f0cf04d",
+    "name": "mloskot",
+  }
+]
+```
 
 ### Restart Minecraft Server
 
