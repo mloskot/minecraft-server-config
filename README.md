@@ -45,8 +45,8 @@ sudo chown -R minecraft.minecraft /opt/minecraft
 
 ### Install Minecraft Forge Server (option with mods)
 
-- `wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar`
-- `wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.16.4-35.1.13/forge-1.16.4-35.1.13-installer.jar`
+- 1.12.2: `wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar`
+- 1.16.4: `wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.16.4-35.1.13/forge-1.16.4-35.1.13-installer.jar`
 
 ```
 java -jar forge-X.Y.Z-A.B.C-installer.jar --installServer
