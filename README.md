@@ -49,9 +49,16 @@ sudo chown -R minecraft.minecraft /opt/minecraft
 - 1.16.4: `wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.16.4-35.1.13/forge-1.16.4-35.1.13-installer.jar`
 
 ```
+sudo su - minecraft
 java -jar forge-X.Y.Z-A.B.C-installer.jar --installServer
 rm forge*installer
-mv minecraft_server.X.Y.Z.jar server.jar
+mv forge-X.Y.Z-A.B.C.jar server.jar
+```
+
+```
+# ls -1 /opt/minecraft/*server*jar
+/opt/minecraft/minecraft_server.1.12.2.jar
+/opt/minecraft/server.jar
 ```
 
 ### Install Systemd Service
@@ -60,6 +67,12 @@ mv minecraft_server.X.Y.Z.jar server.jar
 wget -O /opt/minecraft/minecraft.service https://raw.githubusercontent.com/mloskot/minecraft-server-config/main/systemd/minecraft.service
 sudo ln -s /opt/minecraft/minecraft.service /etc/systemd/system/minecraft.service
 sudo systemctl enable minecraft.service
+```
+
+Let's ensure everything belongs to `minecraft`:
+
+```
+sudo chown -R minecraft.minecraft /opt/minecraft
 ```
 
 ### Start
