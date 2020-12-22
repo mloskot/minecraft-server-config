@@ -103,14 +103,29 @@ sudo -u minecraft screen -r minecraft
 
 Go to https://www.curseforge.com/minecraft/mc-mods and download mods for Minecraft 1.12.2 or 1.16.4, then deploy the JAR files in `/opt/minecraft/mods`:
 
+- 1.12.2:
+
+  ```
+  $ ls -1 /opt/minecraft/mods/
+  Decocraft-2.6.3_1.12.2.jar
+  Mo-Pickaxes-Mod-1.12.2.jar
+  PTRLib-1.0.4.jar
+  Xaeros_Minimap_20.29.0_Forge_1.12.jar
+  '[1.12.2]+SecurityCraft+v1.8.20.2.jar'
+  buildcraft-all-7.99.24.7.jar
+  furniture-6.3.1-1.12.2.jar
+  malisiscore-1.12.2-6.5.1.jar
+  malisisdoors-1.12.2-7.3.0.jar
+  obfuscate-0.4.2-1.12.2.jar
+  vehicle-mod-0.44.1-1.12.2.jar
+  worldedit-forge-mc1.12.2-6.1.10-dist.jar
+  ```
+
+- 1.16.4
+
 ```
-$ ls -1 /opt/minecraft/mods/
-Xaeros_Minimap_20.29.0_Forge_1.12.jar
-'[1.12.2]+SecurityCraft+v1.8.20.2.jar'
-buildcraft-all-7.99.24.7.jar
-malisiscore-1.12.2-6.5.1.jar
-malisisdoors-1.12.2-7.3.0.jar
-worldedit-forge-mc1.12.2-6.1.10-dist.jar
+SecurityCraft-v1.8.20.2-1.16.4.jar
+worldedit-forge-mc1.16.3-7.2.0-dist.jar
 ```
 
 #### Configure
