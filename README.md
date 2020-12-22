@@ -123,10 +123,10 @@ Go to https://www.curseforge.com/minecraft/mc-mods and download mods for Minecra
 
 - 1.16.4
 
-```
-SecurityCraft-v1.8.20.2-1.16.4.jar
-worldedit-forge-mc1.16.3-7.2.0-dist.jar
-```
+  ```
+  SecurityCraft-v1.8.20.2-1.16.4.jar
+  worldedit-forge-mc1.16.3-7.2.0-dist.jar
+  ```
 
 #### Configure
 
