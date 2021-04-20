@@ -45,16 +45,18 @@ sudo chown -R minecraft.minecraft /opt/minecraft
 
 - 1.12.2: `wget -O /opt/minecraft/server.jar https://launcher.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar`
 - 1.16.4: `wget -O /opt/minecraft/server.jar https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar`
+- 1.16.5: `wget -O /opt/minecraft/server.jar https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar`
 
 ### Install Minecraft Forge Server (option with mods)
 
-- 1.12.2: `wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar`
-- 1.16.4: `wget https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.16.4-35.1.13/forge-1.16.4-35.1.13-installer.jar`
+- 1.12.2: `wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.12.2-14.23.5.2854/forge-1.12.2-14.23.5.2854-installer.jar`
+- 1.16.4: `wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.4-35.1.4/forge-1.16.4-35.1.4-installer.jar`
+- 1.16.5: `wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.16.5-36.1.0/forge-1.16.5-36.1.0-installer.jar`
 
 ```
 sudo su - minecraft
 java -jar forge-X.Y.Z-A.B.C-installer.jar --installServer
-rm forge*installer
+rm forge*installer*
 mv forge-X.Y.Z-A.B.C.jar server.jar
 ```
 
@@ -101,7 +103,7 @@ sudo -u minecraft screen -r minecraft
 
 #### Install Mods
 
-Go to https://www.curseforge.com/minecraft/mc-mods and download mods for Minecraft 1.12.2 or 1.16.4, then deploy the JAR files in `/opt/minecraft/mods`:
+Go to https://www.curseforge.com/minecraft/mc-mods and download mods for Minecraft 1.12.2, 1.16.4 or 1.16.5, then deploy the JAR files in `/opt/minecraft/mods`:
 
 - 1.12.2:
 
