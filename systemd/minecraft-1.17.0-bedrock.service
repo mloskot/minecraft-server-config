@@ -1,0 +1,35 @@
+[Unit]
+Description=MinecraftJW 1.17.0 Bedrock
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/minecraft-1.17.0-bedrock
+PrivateUsers=true
+
+User=minecraft
+Group=minecraft
+
+ProtectSystem=full
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+Restart=on-failure
+RestartSec=60s
+
+Environment=LD_LIBRARY_PATH=/opt/minecraft-1.17.0-bedrock
+ExecStart=/usr/bin/screen -DmS minecraft ./bedrock_server
+
+ExecReload=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "reload"\\015'
+
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say SERVER SHUTTING DOWN. Saving map..."\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "save-off"\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "save-all"\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "save-on"\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "say SERVER SHUTTING DOWN. Stopping..."\\015'
+ExecStop=/usr/bin/screen -p 0 -S minecraft -X eval 'stuff "stop"\\015'
+ExecStop=/bin/sleep 10
+
+[Install]
+WantedBy=multi-user.target
